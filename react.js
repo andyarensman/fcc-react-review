@@ -265,3 +265,87 @@ class ToDo extends React.Component {
 //DEFAULT PROPS
 
 MyComponent.defaultProps = { location: 'San Francisco' }
+
+//PROP TYPES
+
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+};
+
+// Change code below this line
+Items.propTypes = { quantity: PropTypes.number.isRequired }
+// Change code above this line
+
+Items.defaultProps = {
+  quantity: 0
+};
+
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Items />
+  }
+};
+  
+// PROPS IN CLASSES
+  
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+            { /* Change code below this line */ }
+            <Welcome name="Andy"/>
+            { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+          { /* Change code below this line */ }
+          <p>Hello, <strong>{ this.props.name }</strong>!</p>
+          { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+//REVIEW PROPS
+
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper/>
+      </div>
+    );
+  }
+};
+// Change code below this line
+
+const Camper = (props) => {
+  return <p>{props.name}</p>
+}
+
+Camper.defaultProps = { name: 'CamperBot '}
+Camper.propTypes = { name: PropTypes.string.isRequired }
+
+
+
+
