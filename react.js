@@ -188,3 +188,80 @@ class TypesOfFood extends React.Component {
 // Change code below this line
 
 ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'))
+
+
+//FIRST REACT COMPONENT FROM SCRATCH
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <h1>My First React Component!</h1>
+    )
+  }
+}
+
+ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'))
+
+//PASSING PROPS
+
+const CurrentDate = (props) => {
+  return (
+    <div>
+      { /* Change code below this line */ }
+      <p>The current date is: {props.date}</p>
+      { /* Change code above this line */ }
+    </div>
+  );
+};
+
+class Calendar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>What date is it?</h3>
+        { /* Change code below this line */ }
+        <CurrentDate date={Date()}/>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+
+//ARRAY PROPS
+
+const List = (props) => {
+  { /* Change code below this line */ }
+  return <p>{props.tasks.join(", ")}</p>
+  { /* Change code above this line */ }
+};
+
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        { /* Change code below this line */ }
+        <List tasks={["walk dog", "workout"]}/>
+        <h2>Tomorrow</h2>
+        <List tasks={["walk dog", "workout", "workout dog"]}/>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+//DEFAULT PROPS
+
+MyComponent.defaultProps = { location: 'San Francisco' }
