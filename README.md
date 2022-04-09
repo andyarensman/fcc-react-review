@@ -1,1 +1,1 @@
-Reviewing the freeCodeCamp React course
+Reviewing the freeCodeCamp React course.
